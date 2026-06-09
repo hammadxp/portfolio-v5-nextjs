@@ -19,8 +19,8 @@ export default function LandingPage() {
       <AboutSection />
       <WorkSection />
       <EducationSection />
-      <SkillsSection />
-      <ServicesSection />
+      <TechStackSection />
+      <ExpertiseSection />
       <ProjectsSection />
       <MiniToolsSection />
       <ContactSection />
@@ -36,7 +36,7 @@ function HeroSection() {
           <div className="flex-col flex flex-1 space-y-1.5">
             <BlurFadeText
               delay={BLUR_FADE_DELAY}
-              className="text-3xl font-bold tracking-tighter sm:text-xl  xl:text-6xl/none"
+              className="text-3xl font-bold tracking-tighter sm:text-xl xl:text-6xl/none"
               yOffset={8}
               text={`Hi, I'm ${data.name.split(" ")[0]} 👋`}
             />
@@ -119,17 +119,17 @@ function EducationSection() {
   );
 }
 
-function SkillsSection() {
+function TechStackSection() {
   return (
-    <SectionWrapper id="skills">
+    <SectionWrapper id="techStack">
       <div className="flex min-h-0 flex-col gap-y-3">
         <BlurFade delay={BLUR_FADE_DELAY * 9}>
-          <h2 className="text-xl font-bold">Skills</h2>
+          <h2 className="text-xl font-bold">Tech Stack</h2>
         </BlurFade>
         <div className="flex flex-wrap gap-1">
-          {data.skills.map((skill, id) => (
-            <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-              <Badge key={skill}>{skill}</Badge>
+          {data.techStack.map((item, id) => (
+            <BlurFade key={item} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+              <Badge key={item}>{item}</Badge>
             </BlurFade>
           ))}
         </div>
@@ -138,19 +138,19 @@ function SkillsSection() {
   );
 }
 
-function ServicesSection() {
+function ExpertiseSection() {
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper id="expertise">
       <div className="flex min-h-0 flex-col gap-y-3">
         <BlurFade delay={BLUR_FADE_DELAY * 9}>
-          <h2 className="text-xl font-bold">Services</h2>
+          <h2 className="text-xl font-bold">Expertise / Skills</h2>
           <p className="text-sm mt-1">I&apos;ve worked on implementing different kinds of features, below are some of them:</p>
         </BlurFade>
         <div className="flex flex-wrap gap-1">
-          {data.services.map((service, id) => (
-            <BlurFade key={service} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-              <Badge variant="outline" className="bg-background" key={service}>
-                {service}
+          {data.expertise.map((item, id) => (
+            <BlurFade key={item} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+              <Badge variant="outline" className="bg-background" key={item}>
+                {item}
               </Badge>
             </BlurFade>
           ))}
