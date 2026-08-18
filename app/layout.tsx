@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
+            <Analytics />
             <Navbar />
             {children}
           </TooltipProvider>
